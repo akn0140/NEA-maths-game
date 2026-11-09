@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Quiz teacher page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Animal Quiz teacher page</h1>
+    <p><a href="/">Pupil quiz</a></p>
+
+    <form id="teacher-login">
+        <label for="password">Teacher password</label>
+        <input id="password" type="password" required>
+        <button>Sign in</button>
+    </form>
+    <p id="teacher-message" role="status"></p>
+
+    <section id="teacher-panel" hidden>
+        <button id="sign-out">Sign out</button>
+        <h2>Create a class</h2>
+        <form id="create-class">
+            <label for="class-name">Class name</label>
+            <input id="class-name" required maxlength="60">
+            <label for="pupil-count">Number of pupil codes</label>
+            <input id="pupil-count" type="number" min="1" max="40" value="3" required>
+            <button>Create class</button>
+        </form>
+
+        <h2>Class progress</h2>
+        <label for="class-list">Choose a class</label>
+        <select id="class-list"></select>
+        <button id="refresh-results">Refresh results</button>
+        <p id="class-code"></p>
+
+        <div id="class-details" hidden>
+            <form id="add-pupils">
+                <label for="extra-count">Extra pupil codes</label>
+                <input id="extra-count" type="number" min="1" max="40" value="1" required>
+                <button>Add codes</button>
+            </form>
+
+            <h3>Pupil codes</h3>
+            <table>
+                <thead>
+                    <tr><th>Code</th><th>Status</th><th>Rounds</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="pupil-list"></tbody>
+            </table>
+
+            <h3 id="results-title">Choose a pupil to see their rounds</h3>
+            <table id="results-table" hidden>
+                <thead>
+                    <tr><th>Topic</th><th>Score</th><th>Date and time</th></tr>
+                </thead>
+                <tbody id="results-list"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="request.js"></script>
+    <script src="teacher.js"></script>
+</body>
+</html>

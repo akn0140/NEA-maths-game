@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animal Quiz demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Animal Quiz</h1>
+    <p>A small demo of code sign-in and saving a result.</p>
+
+    <form id="login">
+        <label for="class-code">Class code</label>
+        <input id="class-code" required maxlength="12" autocomplete="off">
+        <label for="pupil-code">Pupil code</label>
+        <input id="pupil-code" required maxlength="12" autocomplete="off">
+        <button>Sign in</button>
+    </form>
+
+    <section id="quiz" hidden>
+        <p id="pupil"></p>
+        <h2 id="question"></h2>
+        <div id="answers"></div>
+        <button id="again" hidden>Try again</button>
+        <button id="retry" hidden>Retry saving</button>
+        <button id="logout">Sign out</button>
+    </section>
+
+    <p id="message" role="status"></p>
+    <p><a href="/teacher.html">Teacher sign-in</a></p>
+    <script src="request.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

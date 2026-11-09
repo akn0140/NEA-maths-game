@@ -1,0 +1,11 @@
+[
+  {
+    "roundId": "sample-round",
+    "classCode": "FOX7",
+    "pupilCode": "P4K9",
+    "gameCode": "animals",
+    "score": 2,
+    "attempted": 3,
+    "date": "2026-11-09T10:30:00Z"
+  }
+]
