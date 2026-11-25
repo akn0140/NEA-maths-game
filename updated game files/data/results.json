@@ -1,0 +1,11 @@
+[
+  {
+    "roundId": "sample-round",
+    "classCode": "FOX7",
+    "pupilCode": "P4K9",
+    "gameCode": "addition",
+    "score": 8,
+    "attempted": 10,
+    "date": "2026-11-25T10:30:00Z"
+  }
+]

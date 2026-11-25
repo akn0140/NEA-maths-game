@@ -1,0 +1,46 @@
+[
+  {
+    "code": "addition",
+    "name": "Addition"
+  },
+  {
+    "code": "subtraction",
+    "name": "Subtraction"
+  },
+  {
+    "code": "multiplication",
+    "name": "Multiplication"
+  },
+  {
+    "code": "division",
+    "name": "Division"
+  },
+  {
+    "code": "speed-mixed",
+    "name": "Mixed arithmetic"
+  },
+  {
+    "code": "area",
+    "name": "Area"
+  },
+  {
+    "code": "perimeter",
+    "name": "Perimeter"
+  },
+  {
+    "code": "shapes-mixed",
+    "name": "Mixed shapes"
+  },
+  {
+    "code": "coordinates",
+    "name": "Coordinates"
+  },
+  {
+    "code": "barchart",
+    "name": "Bar charts"
+  },
+  {
+    "code": "data-mixed",
+    "name": "Mixed data"
+  }
+]
