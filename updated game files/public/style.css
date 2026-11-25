@@ -1,0 +1,359 @@
+/* ---------- 1. BASICS ---------- */
+
+/* makes the hidden attribute always work (except on the svg, which JS controls itself) */
+[hidden]:not(svg) {
+    display: none !important;
+}
+
+body {
+    font-family: 'Nunito', Arial, sans-serif;
+    background-color: #FAF8F5;       /* off-white */
+    color: #2B2D42;                  /* dark text */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+section {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+h1 {
+    font-size: 44px;
+    font-weight: 900;
+    margin: 0 0 16px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.3;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+/* ---------- 2. CARDS (white boxes) ---------- */
+
+#login-screen,
+#stats-screen,
+#results-screen,
+#pause-menu {
+    background-color: #FFFFFF;
+    border: 3px solid #E6E1D9;
+    border-radius: 28px;
+    box-shadow: 0 6px 0 #E6E1D9;
+    padding: 30px;
+}
+
+
+/* ---------- 3. BUTTONS ---------- */
+
+/* every button reads its colours from these two variables */
+button {
+    --colour: #8DB6E2;               /* main colour (soft blue) */
+    --shadow: #6C95C4;               /* darker ledge underneath */
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 900;
+    color: #2B2D42;                  /* dark text, easier to read on pastel */
+    background-color: var(--colour);
+    border: none;
+    border-radius: 16px;
+    padding: 14px 28px;
+    margin: 6px;
+    min-height: 52px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--shadow);
+}
+
+/* pressing a button pushes it down */
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 var(--shadow);
+}
+
+/* the big menu buttons: one per row */
+.topic-btn,
+.difficulty-btn,
+.count-btn,
+#start_screen button,
+#pause-menu button {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 16px auto;
+    padding: 18px;
+    font-size: 24px;
+}
+
+/* sage green buttons */
+#start_btn,
+#submit_btn,
+#create-student-btn,
+#play_again_btn,
+#resume_btn,
+#custom_count_btn {
+    --colour: #8CC5A2;
+    --shadow: #6BA583;
+}
+
+/* level colours: easy sage, medium sky blue, hard dusty rose */
+.difficulty-btn[data-level="1"] { --colour: #8CC5A2; --shadow: #6BA583; }
+.difficulty-btn[data-level="2"] { --colour: #8DB6E2; --shadow: #6C95C4; }
+.difficulty-btn[data-level="3"] { --colour: #E8A5B3; --shadow: #C7838F; }
+
+/* student name buttons on the login screen */
+#existing-students button {
+    --colour: #E8A5B3;
+    --shadow: #C7838F;
+}
+
+/* white "back" style buttons */
+#pause_btn,
+#stats_back_btn,
+#results_home_btn,
+#home_btn {
+    --colour: #FFFFFF;
+    --shadow: #E6E1D9;
+    color: #3F6FA8;
+    border: 3px solid #8DB6E2;
+}
+
+
+/* ---------- 4. INPUTS ---------- */
+
+input {
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 800;
+    color: #2B2D42;
+    text-align: center;
+    background-color: #FAF8F5;
+    border: 3px solid #E6E1D9;
+    border-radius: 16px;
+    padding: 12px 16px;
+    margin: 10px 6px;
+    min-height: 52px;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6C95C4;           /* blue edge when you click in */
+}
+
+#answer_input,
+#answer_input_2 {
+    width: 150px;
+    background-color: #FFFFFF;
+    border-color: #8DB6E2;
+}
+
+
+/* ---------- 5. GAME SCREEN ---------- */
+
+#timer,
+#question_progress {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 6px 10px;
+}
+
+/* coins: soft sand pill */
+#coins {
+    display: inline-block;
+    background-color: #F1DDA9;
+    border-radius: 999px;
+    padding: 8px 20px;
+    margin: 6px 10px;
+    font-size: 22px;
+    font-weight: 900;
+    box-shadow: 0 4px 0 #D3BE86;
+}
+
+#question {
+    margin: 20px 0;
+}
+
+/* the shape / chart / grid picture */
+#shape-display {
+    background-color: #FFFFFF;
+    border: 3px solid #E6E1D9;
+    border-radius: 24px;
+    box-shadow: 0 6px 0 #E6E1D9;
+    margin: 10px auto 20px;
+    max-width: 100%;
+}
+
+#feedback {
+    font-size: 22px;
+    font-weight: 900;
+    min-height: 30px;
+    color: #2F6B4A;
+}
+
+
+/* ---------- 6. COUNT SCREEN EXTRAS ---------- */
+
+#custom_count_error {
+    color: #C62828;
+    font-weight: 800;
+    min-height: 24px;
+}
+
+
+/* ---------- 7. RESULTS AND STATS ---------- */
+
+#final_score,
+#final_accuracy,
+#average_time,
+#best_score,
+#final_coins,
+#stats-screen p {
+    font-size: 22px;
+    margin: 12px 0;
+}
+
+#results-screen h1 {
+    color: #3E7F5B;
+}
+
+
+/* ---------- 8. CATEGORY CARDS ---------- */
+
+.category-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));   /* three equal columns */
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.category-btn {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;                /* keeps the coloured top inside the rounded corners */
+    color: #2B2D42;
+    background-color: #FFFFFF;
+    border: 3px solid #E6E1D9;
+    border-radius: 24px;
+    box-shadow: 0 6px 0 #E6E1D9;
+    text-align: center;
+}
+
+.category-btn:active {
+    box-shadow: 0 1px 0 #E6E1D9;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+}
+
+.category-btn[data-category="speed"] .card-top  { background-color: #8CC5A2; }
+.category-btn[data-category="shapes"] .card-top { background-color: #E8A5B3; }
+.category-btn[data-category="data"] .card-top   { background-color: #8DB6E2; }
+
+.card-title {
+    padding: 14px 10px 4px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.card-sub {
+    padding: 0 10px 18px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #5C5F73;
+}
+
+
+/* ---------- 9. LOGIN ---------- */
+
+label {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 14px;
+}
+
+#login-message {
+    color: #C62828;
+    font-weight: 800;
+    min-height: 24px;
+}
+
+#save-message {
+    font-size: 20px;
+    font-weight: 800;
+    min-height: 26px;
+}
+
+
+/* ---------- 10. TEACHER AREA ---------- */
+
+.error {
+    color: #C62828;
+    font-weight: 800;
+    min-height: 24px;
+}
+
+/* big class buttons */
+.class-btn {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 14px auto;
+    padding: 16px;
+    font-size: 26px;
+}
+
+.class-details {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* rows for pupils and rounds */
+.list-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #FFFFFF;
+    border: 3px solid #E6E1D9;
+    border-radius: 16px;
+    padding: 10px 16px;
+    margin: 10px 0;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.small-btn {
+    font-size: 16px;
+    padding: 8px 16px;
+    min-height: 40px;
+    margin: 0 0 0 6px;
+}
+
+#back-to-classes,
+#back-to-class,
+#teacher-logout-btn {
+    --colour: #FFFFFF;
+    --shadow: #E6E1D9;
+    color: #3F6FA8;
+    border: 3px solid #8DB6E2;
+}

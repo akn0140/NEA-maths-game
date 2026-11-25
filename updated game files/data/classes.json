@@ -1,0 +1,10 @@
+[
+  {
+    "code": "FOX7",
+    "name": "Fox Class",
+    "pupils": [
+      { "code": "P4K9", "active": true },
+      { "code": "M8R2", "active": true }
+    ]
+  }
+]
