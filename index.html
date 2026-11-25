@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Quest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--    login screen    -->
+
+    <section id="login-screen">
+
+        <h1>Who's Playing?</h1>
+        <p>Type the codes your teacher gave you</p>
+
+        <label for="class-code">Class code</label>
+        <input id="class-code" maxlength="12" autocomplete="off">
+
+        <label for="pupil-code">Pupil code</label>
+        <input id="pupil-code" maxlength="12" autocomplete="off">
+
+        <button id="login-btn">Sign in</button>
+
+        <p id="login-message"></p>
+
+        <p><a href="/teacher.html">Teacher sign-in</a></p>
+
+    </section>
+
+
+    <!--    start screen    -->
+
+    <section id="start_screen" hidden>
+        <h1>Maths Quest</h1>
+        <p>Test your maths skills and earn rewards</p>
+        <button id="start_btn">Start Game</button>
+        <button id="view_stats_btn">My Stats</button>
+        <button id="signout_btn">Sign out</button>
+    </section>
+
+
+    <!--   category screen   -->
+    <section id="category-screen" hidden>
+
+        <h1>Choose a Category</h1>
+
+        <div class="category-row">
+
+            <button class="category-btn" data-category="speed">
+                <span class="card-top">
+                    <svg width="64" height="64" viewBox="0 0 84 84" aria-hidden="true"><path d="M42 22v40M22 42h40" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/></svg>
+                </span>
+                <span class="card-title">Speed Practice</span>
+                <span class="card-sub">Beat the clock</span>
+            </button>
+
+            <button class="category-btn" data-category="shapes">
+                <span class="card-top">
+                    <svg width="64" height="64" viewBox="0 0 84 84" aria-hidden="true"><polygon points="10,70 10,30 38,30 38,12 74,12 74,70" fill="#FFFFFF" stroke="#2B2D42" stroke-width="5" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="card-title">Shapes and Space</span>
+                <span class="card-sub">Area and perimeter</span>
+            </button>
+
+            <button class="category-btn" data-category="data">
+                <span class="card-top">
+                    <svg width="64" height="64" viewBox="0 0 84 84" aria-hidden="true"><rect x="10" y="44" width="16" height="30" rx="4" fill="#FFFFFF"/><rect x="34" y="20" width="16" height="54" rx="4" fill="#FFFFFF"/><rect x="58" y="34" width="16" height="40" rx="4" fill="#FFFFFF"/></svg>
+                </span>
+                <span class="card-title">Data and Graphs</span>
+                <span class="card-sub">Charts and coordinates</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!--   topic screen   -->
+    <section id="topic-screen" hidden>
+
+        <h1>Choose a Topic</h1>
+
+        <!-- shown only when "Speed Practice" is picked -->
+        <div class="topic-group" id="group-speed">
+            <button class="topic-btn" data-topic="+">Addition</button>
+            <button class="topic-btn" data-topic="-">Subtraction</button>
+            <button class="topic-btn" data-topic="x">Multiplication</button>
+            <button class="topic-btn" data-topic="/">Division</button>
+            <button class="topic-btn" data-topic="mixed">Mixed</button>
+        </div>
+
+        <!-- shown only when "Shapes and Space" is picked -->
+        <div class="topic-group" id="group-shapes" hidden>
+            <button class="topic-btn" data-topic="area">Area</button>
+            <button class="topic-btn" data-topic="perimeter">Perimeter</button>
+            <button class="topic-btn" data-topic="shapes-mixed">Mixed</button>
+        </div>
+
+        <!-- shown only when "Data and Graphs" is picked -->
+        <div class="topic-group" id="group-data" hidden>
+            <button class="topic-btn" data-topic="coordinates">Coordinates</button>
+            <button class="topic-btn" data-topic="barchart">Bar Charts</button>
+            <button class="topic-btn" data-topic="data-mixed">Mixed</button>
+        </div>
+
+    </section>
+
+
+    <!--   difficulty screen   -->
+    <section id="difficulty-screen" hidden>
+        <h1>Choose a Level</h1>
+        <button class="difficulty-btn" data-level="1">Easy</button>
+        <button class="difficulty-btn" data-level="2">Medium</button>
+        <button class="difficulty-btn" data-level="3">Hard</button>
+    </section>
+
+
+    <!--   count screen   -->
+    <section id="count-screen" hidden>
+        <h1>How many questions?</h1>
+        <button class="count-btn" data-count="5">5 Questions</button>
+        <button class="count-btn" data-count="10">10 Questions</button>
+        <button class="count-btn" data-count="15">15 Questions</button>
+
+        <p>Or choose your own (1 to 100):</p>
+        <input type="number" id="custom_count" min="1" max="100" placeholder="e.g. 20">
+        <button id="custom_count_btn">Start</button>
+        <p id="custom_count_error"></p>
+    </section>
+
+
+    <!--    stats screen    -->
+
+    <section id="stats-screen" hidden>
+
+        <h1>My Stats</h1>
+
+        <p id="stat_rounds">Rounds played: 0</p>
+        <p id="stat_questions">Total questions answered: 0</p>
+        <p id="stat_accuracy">Overall accuracy: 0%</p>
+        <p id="stat_best">Best score: 0</p>
+
+        <button id="stats_back_btn">Back</button>
+
+    </section>
+
+
+    <!--    game screen    -->
+
+    <section id="game-screen" hidden>
+
+        <p id="timer">Time left: 60s</p>
+
+        <p id="question_progress" hidden>Question 1</p>
+
+        <p id="coins">Coins: 0</p>
+
+        <button id="pause_btn">Pause</button>
+
+        <h2 id="question">Question goes here</h2>
+
+        <svg id="shape-display" width="310" height="310" hidden></svg> <!-- svg can draw shapes, lines and text -->
+
+        <input type="number" id="answer_input">          <!-- where players will enter answer -->
+
+        <input type="number" id="answer_input_2" placeholder="y" hidden>
+
+        <button id="submit_btn">Submit Answer</button>
+
+        <p id="feedback"></p>  <!-- will display the results/feedback -->
+
+    </section>
+
+    <!--    pause menu    -->
+
+    <section id="pause-menu" hidden>
+
+        <h1> Paused </h1>
+
+        <button id="resume_btn"> Resume </button>
+        <button id="restart_btn"> Restart </button>
+        <button id="home_btn"> Return to Home </button>
+        <button id="change_topic_btn"> change topic </button>
+
+    </section>
+
+    <!--    results screen    -->
+
+    <section id="results-screen" hidden>
+
+        <h1>Round Complete!</h1>
+
+        <p id="final_accuracy">Accuracy: 0%</p>
+
+        <p id="average_time">Average time per question: 0s</p>
+
+        <p id="final_score">You answered 0 questions correctly</p>
+
+        <p id="best_score" hidden>Best: 0</p>
+
+        <p id="final_coins">coins: 0</p>
+
+        <p id="save-message"></p>
+
+        <button id="retry-save-btn" hidden>Retry saving</button>
+
+        <button id="play_again_btn">Play Again</button>
+
+        <button id="results_home_btn">Return to Home</button>
+
+    </section>
+
+
+    <script src="request.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

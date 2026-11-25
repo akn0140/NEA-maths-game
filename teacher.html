@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths Quest teacher area</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!--    teacher sign in    -->
+
+    <section id="teacher-login">
+
+        <h1>Teacher area</h1>
+
+        <label for="teacher-password">Teacher password</label>
+        <input type="password" id="teacher-password" autocomplete="off">
+
+        <button id="teacher-login-btn">Sign in</button>
+
+        <p id="teacher-login-message" class="error"></p>
+
+        <p><a href="/">Back to the pupil game</a></p>
+
+    </section>
+
+
+    <!--    step 1: all classes    -->
+
+    <section id="classes-view" hidden>
+
+        <h1>My classes</h1>
+
+        <div id="class-list"></div>
+
+        <h2>Create a class</h2>
+
+        <label for="new-class-name">Class name</label>
+        <input id="new-class-name" maxlength="60" autocomplete="off">
+
+        <label for="new-class-count">How many pupil codes? (1 to 40)</label>
+        <input type="number" id="new-class-count" min="1" max="40" value="3">
+
+        <button id="create-class-btn">Create class</button>
+
+        <p id="classes-message" class="error"></p>
+
+        <button id="teacher-logout-btn">Sign out</button>
+
+    </section>
+
+
+    <!--    step 2: one class and its pupils    -->
+
+    <section id="class-view" hidden>
+
+        <button id="back-to-classes">Back to classes</button>
+
+        <h1 id="class-title"></h1>
+        <p id="class-code-line"></p>
+
+        <h2>Pupils</h2>
+        <div id="pupil-list"></div>
+
+        <h2>Add more pupil codes</h2>
+        <input type="number" id="add-count" min="1" max="40" value="1">
+        <button id="add-codes-btn">Add codes</button>
+
+        <p id="class-message" class="error"></p>
+
+    </section>
+
+
+    <!--    step 3: one pupil's rounds    -->
+
+    <section id="pupil-view" hidden>
+
+        <button id="back-to-class">Back to class</button>
+
+        <h1 id="pupil-title"></h1>
+
+        <div id="pupil-summary"></div>
+
+        <h2>Rounds (newest first)</h2>
+        <div id="round-list"></div>
+
+    </section>
+
+
+    <script src="request.js"></script>
+    <script src="teacher.js"></script>
+
+</body>
+</html>
